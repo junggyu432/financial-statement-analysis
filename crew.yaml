@@ -1,0 +1,17 @@
+# crew.yaml
+name: financial-statement-analysis
+entrypoint: crew_runner.py
+
+# 사용할 파이썬 환경 (옵션)
+runtime:
+  python: "3.11"
+  packages:
+    - crewai
+    - pandas
+    - python-dotenv
+    - google-generativeai
+    - markdown2
+    - pdfkit
+
+# 환경변수(.env) 자동 로드
+env_file: .env
