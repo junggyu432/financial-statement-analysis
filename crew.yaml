@@ -1,17 +1,11 @@
 # crew.yaml
-name: financial-statement-analysis
-entrypoint: crew_runner.py
-
-# 사용할 파이썬 환경 (옵션)
-runtime:
-  python: "3.11"
-  packages:
-    - crewai
-    - pandas
-    - python-dotenv
-    - google-generativeai
-    - markdown2
-    - pdfkit
-
-# 환경변수(.env) 자동 로드
-env_file: .env
+crew:
+  name: "재무제표 분석 크루"
+  description: "엑셀 기반 재무제표 파일을 분석하고 AI 보고서를 생성하는 자동화 워크플로우"
+  agents:
+    - path: crew_agent_loader.py
+    - path: crew_agent_analyzer.py
+    - path: crew_agent_reporter.py
+  entrypoint:
+    path: crew_runner.py
+    function: main
